@@ -1,0 +1,117 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>IP-Adapter</title>
+<link href="./files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./files/jquery.js"></script>
+</head>
+
+<body>
+<div class="content">
+  <h1><strong>IP-Adapter: Text Compatible Image Prompt Adapter for Text-to-Image Diffusion Models</strong></h1>
+  <p id="authors"><span>
+  <a href=""></a></span>
+  <a href="" style="pointer-events: none; text-decoration:none; color: black;">Hu Ye</a>
+  <a href="" style="pointer-events: none; text-decoration:none; color: black;">Jun Zhang</a>
+  <a href="" style="pointer-events: none; text-decoration:none; color: black;">Sibo Liu</a>
+  <a href="" style="pointer-events: none; text-decoration:none; color: black;">Xiao Han</a>
+  <a href="" style="pointer-events: none; text-decoration:none; color: black;">Wei Yang</a>
+  <br>
+    <br>
+  <span style="font-size: 24px">Tencent AI Lab
+  </span></p>
+  <br>
+  <img src="./assets/fig0.jpg" class="teaser-gif" style="width:100%;"><br>
+  <h3 style="text-align:center"><em>Various image synthesis with our proposed IP-Adapter applied on the pretrained text-to-image diffusion model and additional structure controller.</em></h3>
+    <font size="+2">
+          <p style="text-align: center;">
+            <a href="" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+	      <a href="" target="_blank">[Code (coming soon)]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="files/bibtex.txt" target="_blank">[BibTeX]</a>
+          </p>
+    </font>
+</div>
+<div class="content">
+  <h2 style="text-align:center;">Abstract</h2>
+  <p>Recent years have witnessed the strong power of large text-to-image diffusion models for the impressive generative capability to create high-fidelity images. But, it is very tricky to generate desired images using only text prompt as it often involves complex prompt engineering. An alternative to text prompt is image prompt, as the saying goes: "an image is worth a thousand words". Although existing methods of direct fine-tuning from pretrained models are effective, they require large computing resources and are not compatible with other base models, text prompt, and structural controls. In this paper, we present IP-Adapter, an effective and lightweight adapter to achieve image prompt capability for the pretrained text-to-image diffusion models. The key design of our IP-Adapter is decoupled cross-attention mechanism that separates cross-attention layers for text features and image features. Despite the simplicity of our method, an IP-Adapter with only 22M parameters can achieve comparable or even better performance to a fine-tuned image prompt model. As we freeze the pretrained duffusion model, the proposed IP-Adapter can be generalized not only to other custom models fine-tuned from the same base model, but also to controllable generation using existing controllable tools. With the benefit of the decoupled cross-attention strategy, the image prompt can also work well with the text prompt to accomplish multimodal image generation. </p>
+</div>
+<div class="content">
+  <h2>Approach</h2>
+  <p>The image prompt adapter is designed to enable a pretrained text-to-image diffusion model to generate images with image prompt. The proposed IP-Adapter consists of two parts: a image encoder to extract image features from image prompt, and adapted modules with decoupled cross-attention to embed image features into the pretrained text-to-image diffusion model.</p>
+  <br>
+  <img class="summary-img" src="./assets/fig1.png" style="width:100%;"> <br>
+</div>
+<div class="content">
+  <h2>Comparison with Existing Methods</h2>
+  <p>The comparison of our proposed IP-Adapter with other methods conditioned on different kinds and styles of images.</p>
+<img class="summary-img" src="./assets/result1.jpg" style="width:100%;">
+</div>
+<div class="content">
+  <h2>More Results</h2>
+
+
+  <p style="font-size: 18px">
+    <strong>Generalizable to Custom Models</strong>
+    <br><br>
+    Once the IP-Adapter is trained, it can be directly reusable on custom models fine-tuned from the same base model.
+  </p>
+  <img class="summary-img" src="./assets/result2.jpg" style="width:100%;"><br><br>
+
+  <p style="font-size: 18px">
+    <strong>Structure Control</strong>
+    <br><br>
+    The IP-Adapter is fully compatible with existing controllable tools, e.g., ControlNet and T2I-Adapter.
+  </p>
+  <img class="summary-img" src="./assets/result3.jpg" style="width:100%;"><br><br>
+  <p style="font-size: 18px">
+    Our method not only outperforms other methods in terms of image quality, but also produces images that better align with the reference image.
+  </p>
+  <img class="summary-img" src="./assets/result4.jpg" style="width:100%;"><br><br>
+
+  <p style="font-size: 18px">
+    <strong>Image-to-Image and Inpainting</strong>
+    <br><br>
+     Image-guided image-to-image and inpainting can be also achieved by simply replacing text prompt with image prompt.
+  </p>
+  <img class="summary-img" src="./assets/result5.jpg" style="width:100%;"><br><br>
+
+  <p style="font-size: 18px">
+    <strong>Multimodal Prompt</strong>
+    <br><br>
+    Due to the decoupled cross-attention strategy, image prompt can work together with text prompt to realize multimodal image generation.
+  </p>
+  <img class="summary-img" src="./assets/result6.jpg" style="width:100%;"><br><br>
+  <p style="font-size: 18px">
+    Compared with other existing methods, our method can generate superior results in both image quality and alignment with multimodal prompts.
+  </p>
+  <img class="summary-img" src="./assets/result7.jpg" style="width:100%;"><br><br>
+
+</div>
+
+
+</div>
+<div class="content">
+  <h2>BibTex</h2>
+  <code> @article{ye2023ip-adapter,<br>
+  &nbsp;&nbsp;title={IP-Adapter: Text Compatible Image Prompt Adapter for Text-to-Image Diffusion Models},<br>
+  &nbsp;&nbsp;author={Ye, Hu and Zhang, Jun and Liu, Sibo and Han, Xiao and Yang, Wei},<br>
+  &nbsp;&nbsp;booktitle={arXiv preprint arxiv:2308.*****},<br>
+  &nbsp;&nbsp;year={2023}<br>
+  } </code> 
+</div>
+
+<br><br>
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">                                                                                                                                   
+      <!-- <div class="content"> -->
+      The website template is taken from <a href="https://dreambooth.github.io/">dreambooth</a> project page.
+      <!-- </div> -->
+    </div>
+  </div>
+</footer>
+<br><br>
+
+</body>
+</html>
